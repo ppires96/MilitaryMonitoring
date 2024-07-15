@@ -1,0 +1,20 @@
+﻿<Window x:Class="MilitaryMonitoring.Views.LocationMap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilitaryMonitoring.Views"
+        xmlns:wpf="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="LocationMap" Height="450" Width="800">
+    <Grid>
+        <wpf:Map Name="LocationsMap" ZoomLevel="18" Center="{Binding Position}">
+            <Canvas Name="Canvas"
+                    wpf:MapLayer.Position="{Binding Position}"
+                    wpf:MapLayer.PositionOrigin="BottomCenter" Width="30" Height="30">
+                <materialDesign:PackIcon Kind="MapMarker"  Width="30" Height="30" Foreground="red"/>
+            </Canvas>
+        </wpf:Map>
+
+    </Grid>
+</Window>
